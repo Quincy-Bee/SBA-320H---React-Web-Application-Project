@@ -1,1 +1,1 @@
-# SBA-320H---React-Web-Application-Project
+Users can search for a movie, save it to a watchlist and remember what to watch later.
