@@ -7,6 +7,9 @@ function App() {
 
   const [movies, setMovies] = useState([]);
 
+  // State for WatchList
+  const [watchlist, setWatchlist] = useState([]);
+
   return (
     <div>
 
@@ -14,7 +17,10 @@ function App() {
 
       <SearchBar setMovies={setMovies} />
 
-      <MovieList movies={movies} />
+      <MovieList
+        movies={movies}
+        watchlist={watchlist}
+        setWatchlist={setWatchlist} />
 
     </div>
   );
