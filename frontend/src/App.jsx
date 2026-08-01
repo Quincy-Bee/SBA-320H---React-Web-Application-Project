@@ -1,9 +1,13 @@
 import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+
+// Header Component
 
 function App() {
   return (
     <div>
       <Header />
+      <SearchBar />
     </div>
   );
 }
