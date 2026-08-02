@@ -16,7 +16,7 @@ function App() {
   });
 
 
-  // Saved watchlist to localStorage 
+  // Save watchlist to localStorage
   useEffect(() => {
 
     localStorage.setItem(
@@ -40,7 +40,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="app">
 
       <Header />
 
@@ -48,16 +48,28 @@ function App() {
         setMovies={setMovies} 
       />
 
-      <MovieList
-        movies={movies}
-        watchlist={watchlist}
-        setWatchlist={setWatchlist}
-      />
 
-      <Watchlist
-        watchlist={watchlist}
-        removeFromWatchlist={removeFromWatchlist}
-      />
+      <section className="movie-section">
+
+        <h2>Search Results</h2>
+
+        <MovieList
+          movies={movies}
+          watchlist={watchlist}
+          setWatchlist={setWatchlist}
+        />
+
+      </section>
+
+
+      <section className="watchlist-section">
+
+        <Watchlist
+          watchlist={watchlist}
+          removeFromWatchlist={removeFromWatchlist}
+        />
+
+      </section>
 
     </div>
   );

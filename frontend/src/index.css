@@ -1,0 +1,125 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Main container */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Search */
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Movie Sections */
+.movie-section,
+.watchlist-section {
+  margin-top: 30px;
+}
+
+.movie-section h2,
+.watchlist-section h2 {
+  margin-bottom: 20px;
+}
+
+/* Movie cards */
+.movie-card {
+  background: white;
+  width: 220px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-card h3 {
+  margin-top: 15px;
+}
+
+.movie-card p {
+  color: #555;
+}
+
+/* Watchlist */
+.watchlist-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.watchlist-section button {
+  margin-left: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .movie-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+}

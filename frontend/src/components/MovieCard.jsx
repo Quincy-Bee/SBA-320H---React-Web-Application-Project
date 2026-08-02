@@ -11,7 +11,7 @@ function MovieCard({ movie, setWatchlist }) {
 
 
   return (
-    <div>
+    <div className="movie-card">
 
       <img 
         src={movie.Poster}
