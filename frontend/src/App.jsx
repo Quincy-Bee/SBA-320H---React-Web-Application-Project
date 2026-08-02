@@ -8,60 +8,53 @@ function App() {
 
   const [movies, setMovies] = useState([]);
 
-  // State for WatchList
-  const [watchlist, setWatchlist] = useState([]);
+  // Load watchlist from localStorage
+  const [watchlist, setWatchlist] = useState(() => {
+    const savedMovies = localStorage.getItem("watchlist");
 
-  // use effect for local storage 1
+    return savedMovies ? JSON.parse(savedMovies) : [];
+  });
+
+
+  // Saved watchlist to localStorage 
   useEffect(() => {
 
-  const savedMovies = localStorage.getItem("watchlist");
+    localStorage.setItem(
+      "watchlist",
+      JSON.stringify(watchlist)
+    );
 
-  if (savedMovies) {
-    setWatchlist(JSON.parse(savedMovies));
-  }
+  }, [watchlist]);
 
-}, []);
 
-  // use effect for local storage 2
-
-useEffect(() => {
-
-  localStorage.setItem(
-    "watchlist",
-    JSON.stringify(watchlist)
-  );
-
-}, [watchlist]);
-
-  // end use effect for local storage
-
-  // remove movie
-
+  // Remove movie from watchlist
   const removeFromWatchlist = (id) => {
 
-  const updatedWatchlist = watchlist.filter(
-    (movie) => movie.imdbID !== id
-  );
+    const updatedWatchlist = watchlist.filter(
+      (movie) => movie.imdbID !== id
+    );
 
-  setWatchlist(updatedWatchlist);
+    setWatchlist(updatedWatchlist);
 
-};
- 
-// end remove movie
+  };
+
 
   return (
     <div>
 
       <Header />
 
-      <SearchBar setMovies={setMovies} />
+      <SearchBar 
+        setMovies={setMovies} 
+      />
 
       <MovieList
         movies={movies}
         watchlist={watchlist}
-        setWatchlist={setWatchlist} />
+        setWatchlist={setWatchlist}
+      />
 
-        <Watchlist 
+      <Watchlist
         watchlist={watchlist}
         removeFromWatchlist={removeFromWatchlist}
       />

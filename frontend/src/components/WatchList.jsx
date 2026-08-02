@@ -1,4 +1,4 @@
-function Watchlist({ watchlist }) {
+function Watchlist({ watchlist, removeFromWatchlist }) {
 
   return (
     <div>
@@ -7,13 +7,25 @@ function Watchlist({ watchlist }) {
         My Watchlist
       </h2>
 
+
       {watchlist.map((movie) => (
 
-        <p key={movie.imdbID}>
-          {movie.Title}
-        </p>
+        <div key={movie.imdbID}>
+
+          <p>
+            {movie.Title}
+          </p>
+
+          <button
+            onClick={() => removeFromWatchlist(movie.imdbID)}
+          >
+            Remove
+          </button>
+
+        </div>
 
       ))}
+
 
     </div>
   );
