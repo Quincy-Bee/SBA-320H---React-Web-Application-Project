@@ -63,6 +63,7 @@ useEffect(() => {
 
         <Watchlist 
         watchlist={watchlist}
+        removeFromWatchlist={removeFromWatchlist}
       />
 
     </div>
