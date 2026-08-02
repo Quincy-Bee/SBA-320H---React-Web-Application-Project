@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
+import Watchlist from "./components/Watchlist";
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
         movies={movies}
         watchlist={watchlist}
         setWatchlist={setWatchlist} />
+
+        <Watchlist 
+        watchlist={watchlist}
+      />
 
     </div>
   );

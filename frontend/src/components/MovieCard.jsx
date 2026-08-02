@@ -1,14 +1,32 @@
-function MovieCard({ movie }) {
+function MovieCard({ movie, setWatchlist }) {
+
+  const addToWatchlist = () => {
+
+    setWatchlist((previousMovies) => [
+      ...previousMovies,
+      movie
+    ]);
+
+  };
+
+
   return (
     <div>
+
       <img 
-        src={movie.Poster} 
+        src={movie.Poster}
         alt={movie.Title}
       />
 
       <h3>{movie.Title}</h3>
 
-      <p>Year: {movie.Year}</p>
+      <p>
+        Year: {movie.Year}
+      </p>
+
+      <button onClick={addToWatchlist}> 
+        Add to Watchlist
+      </button>
 
     </div>
   );
