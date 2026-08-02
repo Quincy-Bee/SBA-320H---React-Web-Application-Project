@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
-import Watchlist from "./components/Watchlist";
+import WatchList from "./components/WatchList";
 
 function App() {
 
@@ -40,36 +40,24 @@ function App() {
 
 
   return (
-    <div className="app">
+    <div>
 
       <Header />
 
       <SearchBar 
-        setMovies={setMovies} 
+        setMovies={setMovies}
       />
 
+      <MovieList
+        movies={movies}
+        watchlist={watchlist}
+        setWatchlist={setWatchlist}
+      />
 
-      <section className="movie-section">
-
-        <h2>Search Results</h2>
-
-        <MovieList
-          movies={movies}
-          watchlist={watchlist}
-          setWatchlist={setWatchlist}
-        />
-
-      </section>
-
-
-      <section className="watchlist-section">
-
-        <Watchlist
-          watchlist={watchlist}
-          removeFromWatchlist={removeFromWatchlist}
-        />
-
-      </section>
+      <WatchList
+        watchlist={watchlist}
+        removeFromWatchlist={removeFromWatchlist}
+      />
 
     </div>
   );
